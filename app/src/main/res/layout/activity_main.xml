@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Step Counter"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+    <ImageView
+        android:id="@+id/settings_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/settings"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frameLayout"
+        android:layout_marginTop="100dp">
+
+    <com.github.lzyzsd.circleprogress.DonutProgress
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:donut_text_size="0dp"
+        android:rotation="90"
+        android:id="@+id/donutProgress"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:visibility="visible"
+        app:donut_progress="0"
+        app:donut_unfinished_stroke_width="5dp"
+        app:donut_unfinished_color="@color/white"
+        app:donut_finished_color="@color/blue"
+        app:donut_finished_stroke_width="7dp"/>
+
+        <com.github.lzyzsd.circleprogress.CircleProgress
+            android:id="@+id/circleProgress"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            app:circle_finished_color="@color/blue"
+            app:circle_progress="0"
+            app:circle_text_size="0dp"
+            app:circle_text_color="@color/black"
+            app:circle_unfinished_color="@color/white" />
+
+        <com.github.lzyzsd.circleprogress.ArcProgress
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:id="@+id/arcProgress"
+        app:arc_progress="0"
+            app:arc_text_size="0dp"
+            app:arc_suffix_text_size="0dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        app:arc_stroke_width="5dp"
+        app:arc_unfinished_color="@color/white"
+        app:arc_finished_color="@color/blue" />
+
+        <TextView
+            android:id="@+id/percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/blue"
+            android:textSize="22dp"
+            android:text="0%"/>
+
+    <TextView
+        android:id="@+id/steps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:textSize="22dp"
+        android:text="Steps: 0"/>
+
+        <TextView
+            android:id="@+id/goalSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:layout_marginTop="60dp"
+            android:textSize="18dp"
+            android:text="2000"/>
+
+    </FrameLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/startStopBtn"
+        android:textSize="18dp"
+        android:text="Start"
+        android:layout_below="@id/frameLayout"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:backgroundTint="@color/blue"
+        app:cornerRadius="7dp"
+        android:clickable="true"/>
+
+</RelativeLayout>

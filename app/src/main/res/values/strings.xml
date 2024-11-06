@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">StepCounter</string>
+    <string-array name="progress_style_array">
+        <item>Donut Progress</item>
+        <item>Circular Progress</item>
+        <item>Arc Progress</item>
+    </string-array>
+</resources>

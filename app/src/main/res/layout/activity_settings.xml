@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".SettingsActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Settings"
+        android:textColor="@color/white"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:id="@+id/title"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose Progress Style"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:id="@+id/progress_style_tv"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_below="@id/title"/>
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/progress_style_spinner_container"
+        android:layout_below="@id/title"
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@id/progress_style_tv"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="5dp"
+            android:id="@+id/progress_style_spinner"
+            android:entries="@array/progress_style_array"
+            android:background="@color/white"/>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <!--<TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dark Mode"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:id="@+id/light_dark_mode_txt"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/target_count_container"/>-->
+
+
+    <!--<com.google.android.material.switchmaterial.SwitchMaterial
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dark_mode_toggle"
+        android:textColor="@color/white"
+        android:text="Dark Mode"
+        android:textSize="20dp"
+        android:textAlignment="viewStart"
+        android:layout_below="@id/target_count_container"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="20dp"/>-->
+
+
+    <!-- <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Target Steps Count"
+         android:textColor="@color/white"
+         android:textSize="20dp"
+         android:id="@+id/target_txt"
+         android:layout_marginTop="20dp"
+         android:layout_below="@id/progress_style_tv"/>-->
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/steps_container"
+        android:layout_below="@id/progress_style_spinner_container"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:hint="Target Steps Count"
+        android:layout_below="@id/progress_style_spinner_container"
+        android:id="@+id/target_count_container">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:id="@+id/target_steps_count"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:id="@+id/apply_btn"
+        android:text="Apply"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="20dp"
+        app:cornerRadius="10dp"/>
+
+</RelativeLayout>
