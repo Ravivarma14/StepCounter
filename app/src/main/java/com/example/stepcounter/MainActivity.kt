@@ -93,6 +93,8 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
         activityMainBinding.donutProgress.max=stepCounterTarget
         activityMainBinding.arcProgress.max=stepCounterTarget
         activityMainBinding.circleProgress.max=stepCounterTarget
+
+        updateUI()
     }
 
     private fun registerSensorListener(){
@@ -178,15 +180,18 @@ class MainActivity : AppCompatActivity(), SensorEventListener {
             lastStepTime=System.currentTimeMillis()
             activityMainBinding.steps.text="Steps:" + stepCount.toString()
 
-            var percent= (stepCount*100 / stepCounterTarget)
-            activityMainBinding.percentage.text= percent.toString()+"%"
-            Log.d(TAG, "updateSteps: stepCount: "+ stepCount + " target: "+ stepCounterTarget+ "percent: "+ percent)
-            activityMainBinding.arcProgress.progress=percent
-            activityMainBinding.arcProgress.animate()
-            activityMainBinding.donutProgress.progress=percent
-            activityMainBinding.donutProgress.animate()
-            activityMainBinding.circleProgress.progress=percent
-            activityMainBinding.circleProgress.animate()
+            updateUI()
         }
+    }
+    private fun updateUI(){
+        var percent= (stepCount*100 / stepCounterTarget)
+        activityMainBinding.percentage.text= percent.toString()+"%"
+        Log.d(TAG, "updateSteps: stepCount: "+ stepCount + " target: "+ stepCounterTarget+ "percent: "+ percent)
+        activityMainBinding.arcProgress.progress=percent
+        activityMainBinding.arcProgress.animate()
+        activityMainBinding.donutProgress.progress=percent
+        activityMainBinding.donutProgress.animate()
+        activityMainBinding.circleProgress.progress=percent
+        activityMainBinding.circleProgress.animate()
     }
 }
